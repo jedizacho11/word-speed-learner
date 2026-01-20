@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Improve your reading speed with bionic reading and adaptive learning">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Speed Reader">
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIlNwZWVkIFJlYWRpbmcgVHJhaW5lciIsCiAgInNob3J0X25hbWUiOiAiU3BlZWQgUmVhZGVyIiwKICAic3RhcnRfdXJsIjogIi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMwMDAwMDAiLAogICJ0aGVtZV9jb2xvciI6ICIjMDAwMDAwIiwKICAib3JpZW50YXRpb24iOiAicG9ydHJhaXQiLAogICJpY29ucyI6IFsKICAgIHsKICAgICAgInNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBeE1qZ2dNVEk0SWo0OGNtVmpkQ0IzYVdSMGFEMGlNVEk0SWlCb1pXbG5hSFE5SWpFeU9DSWdabWxzYkQwaUl6QXdNREF3TUNJZ2NuZzlJakUySWk4K1BIUmxlSFFnZUQwaU5qUWlJSGs5SWpZMElpQm1iMjUwTFdaaGJXbHNlVDBpUVhKcFlXd2lJR1p2Ym5RdGMybDZaVDBpTkRnaUlHWnBiR3c5SWlObFp6YzBZek5qSWo0OEwzUmxlSFErUEhSbGVIUWdlRDBpTmpRaUlIazlJamN5SWlCbWIyNTBMV1poYldsc2VUMGlRWEpwWVd3aUlHWnZiblF0YzJsNlpUMGlNVGdpSUdacGJHdzlJaU5sT0RnNE9EZ2lQalF1TlR3dmRHVjRkRDQ4TDNOMlp6ND0iLAogICAgICAic2l6ZXMiOiAiMTI4eDEyOCIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiCiAgICB9LAogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIWnBaWGRDYjNnOUlqQWdNQ0F4TWpnZ01USTRJajQ4Y21WamRDQjNhV1IwYUQwaU1USTRJaUJvWldsbmFIUTlJakV5T0NJZ1ptbHNiRDBpSXpBd01EQXdNQ0lnY25nOUlqRTJJaTgrUEhSbGVIUWdlRDBpTmpRaUlIazlJalkwSWlCbWIyNTBMV1poYldsc2VUMGlRWEpwWVd3aUlHWnZiblF0YzJsNlpUMGlORGdpSUdacGJHdzlJaU5sWnpjMFl6TmpJajQ4TDNSbGVIUStQSFJsZUhRZ2VEMGlOalFpSUhrOUlqY3lJaUJtYjI1MExXWmhiV2xzZVQwaVFYSnBZV3dpSUdadmJuUXRjMmw2WlQwaU1UZ2lJR1pwYkd3OUlpTmxPRGc0T0RnaVBqUXVOVHd2ZEdWNGRENDhMM04yWno0PSIsCiAgICAgICJzaXplcyI6ICIxMjh4MTI4IiwKICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIsCiAgICAgICJwdXJwb3NlIjogImFueSBtYXNrYWJsZSIKICAgIH0KICBDCN0">
+    <title>Speed Reading Trainer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000000;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: #1a1a1a;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            border: 1px solid #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .install-prompt {
+            background: #2a2a2a;
+            border: 2px solid #e74c3c;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .install-prompt.show {
+            display: block;
+        }
+
+        .install-prompt p {
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+
+        .reading-display {
+            min-height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 64px;
+            font-weight: bold;
+            margin: 40px 0;
+            padding: 40px;
+            border-radius: 15px;
+            background: #000000;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .word .highlight {
+            color: #e74c3c;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .btn-success {
+            background: #27ae60;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #229954;
+        }
+
+        .btn-secondary {
+            background: #555;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #444;
+        }
+
+        .btn-danger {
+            background: #c0392b;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #a93226;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .quiz-section {
+            display: none;
+        }
+
+        .question {
+            margin: 20px 0;
+            padding: 25px;
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+
+        .question h3 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option {
+            padding: 15px;
+            background: #1a1a1a;
+            border: 2px solid #444;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #ccc;
+        }
+
+        .option:hover {
+            border-color: #e74c3c;
+            transform: translateX(5px);
+        }
+
+        .option.selected {
+            border-color: #e74c3c;
+            background: #2a1a1a;
+            color: #fff;
+        }
+
+        .option.correct {
+            border-color: #27ae60;
+            background: #1e4d2b;
+            color: #fff;
+        }
+
+        .option.incorrect {
+            border-color: #e74c3c;
+            background: #4d1f1f;
+            color: #fff;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            padding: 20px;
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        .intro-section, .results-section {
+            text-align: center;
+        }
+
+        .intro-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .results-section h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .score-display {
+            font-size: 48px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 20px 0;
+        }
+
+        .difficulty-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .difficulty-easy {
+            background: #27ae60;
+            color: #ffffff;
+        }
+
+        .difficulty-medium {
+            background: #f39c12;
+            color: #ffffff;
+        }
+
+        .difficulty-hard {
+            background: #e74c3c;
+            color: #ffffff;
+        }
+
+        .option.idk {
+            border-color: #95a5a6;
+            background: #2a2a2a;
+            font-style: italic;
+            color: #aaa;
+        }
+
+        .feedback-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .btn-small {
+            padding: 8px 20px;
+            font-size: 14px;
+        }
+        .hidden {
+            display: none;
+        }
+
+        .offline-indicator {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #e74c3c;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: none;
+        }
+
+        .offline-indicator.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-indicator" id="offlineIndicator">📴 Offline Mode</div>
+    
+    <div class="container">
+        <h1>⚡ Speed Reading Trainer</h1>
+        <p class="subtitle">Bionic Reading • Adaptive Learning</p>
+
+        <div class="install-prompt" id="installPrompt">
+            <p>📱 Install this app for offline access and a better experience!</p>
+            <button class="btn-primary btn-small" id="installButton">Install App</button>
+            <button class="btn-secondary btn-small" onclick="dismissInstallPrompt()">Maybe Later</button>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value" id="currentLevel">1</div>
+                <div class="stat-label">Level</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="wpm">300</div>
+                <div class="stat-label">Words/Min</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="accuracy">-</div>
+                <div class="stat-label">Accuracy</div>
+            </div>
+        </div>
+
+        <div id="introSection" class="intro-section">
+            <p>Welcome to your speed reading journey! You'll read a short story one word at a time with <strong>bionic reading</strong> (first half highlighted in red). After the story, answer comprehension questions. Based on your performance, the difficulty will adapt to help you improve!</p>
+            <button class="btn-primary" onclick="startReading()">Start First Test</button>
+        </div>
+
+        <div id="readingSection" class="hidden">
+            <div class="reading-display" id="wordDisplay"></div>
+            <div class="controls">
+                <button class="btn-secondary" id="pauseBtn" onclick="togglePause()">Pause</button>
+                <button class="btn-danger" onclick="stopReading()">Stop</button>
+            </div>
+        </div>
+
+        <div id="quizSection" class="quiz-section">
+            <h2 style="text-align: center; color: #ffffff; margin-bottom: 20px;">Comprehension Quiz</h2>
+            <div id="questionsContainer"></div>
+            <div class="controls">
+                <button class="btn-success" onclick="submitQuiz()">Submit Answers</button>
+            </div>
+        </div>
+
+        <div id="resultsSection" class="results-section hidden">
+            <h2>Test Complete!</h2>
+            <div class="score-display" id="scoreDisplay"></div>
+            <div id="difficultyChange"></div>
+            <p id="feedbackText" style="margin: 20px 0; font-size: 16px; color: #ccc;"></p>
+            
+            <p style="color: #888; font-size: 14px; margin-bottom: 10px;">How did that feel?</p>
+            <div class="feedback-buttons">
+                <button class="btn-danger btn-small" onclick="manualAdjust('too-hard')">😰 Too Hard</button>
+                <button class="btn-success btn-small" onclick="manualAdjust('too-easy')">😴 Too Easy</button>
+            </div>
+            
+            <div class="controls">
+                <button class="btn-primary" onclick="nextStory()">Continue Training</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // PWA Installation
+        let deferredPrompt;
+        const installPrompt = document.getElementById('installPrompt');
+        const installButton = document.getElementById('installButton');
+        const offlineIndicator = document.getElementById('offlineIndicator');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installPrompt.classList.add('show');
+        });
+
+        installButton.addEventListener('click', async () => {
+            if (!deferredPrompt) return;
+            
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            
+            if (outcome === 'accepted') {
+                installPrompt.classList.remove('show');
+            }
+            
+            deferredPrompt = null;
+        });
+
+        function dismissInstallPrompt() {
+            installPrompt.classList.remove('show');
+        }
+
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                const swCode = `
+                    const CACHE_NAME = 'speed-reader-v1';
+                    
+                    self.addEventListener('install', (event) => {
+                        event.waitUntil(
+                            caches.open(CACHE_NAME).then((cache) => {
+                                return cache.addAll(['/']);
+                            })
+                        );
+                        self.skipWaiting();
+                    });
+                    
+                    self.addEventListener('fetch', (event) => {
+                        event.respondWith(
+                            caches.match(event.request).then((response) => {
+                                return response || fetch(event.request);
+                            })
+                        );
+                    });
+                    
+                    self.addEventListener('activate', (event) => {
+                        event.waitUntil(
+                            caches.keys().then((cacheNames) => {
+                                return Promise.all(
+                                    cacheNames.map((cacheName) => {
+                                        if (cacheName !== CACHE_NAME) {
+                                            return caches.delete(cacheName);
+                                        }
+                                    })
+                                );
+                            })
+                        );
+                    });
+                `;
+                
+                const blob = new Blob([swCode], { type: 'application/javascript' });
+                const swUrl = URL.createObjectURL(blob);
+                
+                navigator.serviceWorker.register(swUrl).then(() => {
+                    console.log('Service Worker registered');
+                }).catch((error) => {
+                    console.log('Service Worker registration failed:', error);
+                });
+            });
+        }
+
+        // Online/Offline Detection
+        window.addEventListener('online', () => {
+            offlineIndicator.classList.remove('show');
+        });
+
+        window.addEventListener('offline', () => {
+            offlineIndicator.classList.add('show');
+        });
+
+        // Check initial state
+        if (!navigator.onLine) {
+            offlineIndicator.classList.add('show');
+        }
+
+        const stories = {
+            easy: [
+                {
+                    text: "The magnificent golden sun slowly descended behind the beautiful towering mountains. Sarah carefully watched the breathtaking colorful sky transform into wonderful shades of orange and purple. She felt incredibly peaceful sitting there.",
+                    questions: [
+                        { q: "What was descending?", options: ["The moon", "The sun", "The stars", "The clouds"], answer: 1 },
+                        { q: "Where was the sun going down?", options: ["Behind mountains", "Into the ocean", "Behind buildings", "Into a forest"], answer: 0 },
+                        { q: "Who was watching?", options: ["John", "Maria", "Sarah", "David"], answer: 2 },
+                        { q: "What colors did the sky turn?", options: ["Blue and green", "Orange and purple", "Red and yellow", "Pink and white"], answer: 1 },
+                        { q: "How did Sarah feel?", options: ["Anxious", "Peaceful", "Excited", "Scared"], answer: 1 }
+                    ]
+                },
+                {
+                    text: "The friendly neighborhood bakery always smelled absolutely amazing in the morning. Fresh delicious bread baked every single day. Children happily gathered outside, eagerly waiting for the wonderful warm chocolate cookies.",
+                    questions: [
+                        { q: "What smelled amazing?", options: ["The bakery", "The park", "The school", "The library"], answer: 0 },
+                        { q: "When did it smell good?", options: ["Evening", "Afternoon", "Morning", "Night"], answer: 2 },
+                        { q: "What were the children waiting for?", options: ["Bread", "Cookies", "Cake", "Pie"], answer: 1 },
+                        { q: "How often was bread baked?", options: ["Weekly", "Monthly", "Every day", "Every hour"], answer: 2 },
+                        { q: "What type of cookies?", options: ["Vanilla", "Strawberry", "Chocolate", "Peanut butter"], answer: 2 }
+                    ]
+                }
+            ],
+            medium: [
+                {
+                    text: "Detective Martinez examined the mysterious locked room carefully. No windows. One door. Yet the valuable diamond had vanished completely. She noticed faint muddy footprints leading toward the elegant fireplace. Perhaps the ancient chimney held secrets.",
+                    questions: [
+                        { q: "What was Martinez's profession?", options: ["Police officer", "Detective", "Security guard", "Investigator"], answer: 1 },
+                        { q: "What had disappeared?", options: ["A diamond", "Money", "Jewels", "A painting"], answer: 0 },
+                        { q: "Where did the footprints lead?", options: ["To the window", "To the fireplace", "To the door", "To the closet"], answer: 1 },
+                        { q: "How many windows were there?", options: ["None", "One", "Two", "Three"], answer: 0 },
+                        { q: "What might hold secrets?", options: ["The door", "The floor", "The chimney", "The ceiling"], answer: 2 }
+                    ]
+                },
+                {
+                    text: "The spacecraft trembled violently as it entered Mars' thin atmosphere. Commander Chen gripped her seat tightly. Red dust swirled everywhere outside. This moment represented humanity's boldest achievement yet. History was happening now.",
+                    questions: [
+                        { q: "What was entering the atmosphere?", options: ["A plane", "A rocket", "A spacecraft", "A satellite"], answer: 2 },
+                        { q: "Which planet were they approaching?", options: ["Earth", "Venus", "Mars", "Jupiter"], answer: 2 },
+                        { q: "Who was the commander?", options: ["Chen", "Smith", "Rodriguez", "Johnson"], answer: 0 },
+                        { q: "What color was the dust?", options: ["Yellow", "Red", "Brown", "Orange"], answer: 1 },
+                        { q: "What was Chen doing?", options: ["Standing", "Gripping her seat", "Looking out", "Writing"], answer: 1 }
+                    ]
+                }
+            ],
+            hard: [
+                {
+                    text: "Dr. Patel scrutinized anomalous data. Quantum fluctuations defied conventional physics. Her hypothesis suggested parallel universes might interact subtly through subatomic particles. Revolutionary implications emerged. She coded simulations frantically, racing toward breakthrough revelations that could redefine reality itself.",
+                    questions: [
+                        { q: "What was Patel's title?", options: ["Professor", "Doctor", "Scientist", "Researcher"], answer: 1 },
+                        { q: "What type of fluctuations?", options: ["Energy", "Quantum", "Magnetic", "Thermal"], answer: 1 },
+                        { q: "What might interact?", options: ["Galaxies", "Atoms", "Parallel universes", "Dimensions"], answer: 2 },
+                        { q: "What was she coding?", options: ["Programs", "Simulations", "Algorithms", "Models"], answer: 1 },
+                        { q: "What did her work defy?", options: ["Logic", "Conventional physics", "Mathematics", "Theory"], answer: 1 }
+                    ]
+                },
+                {
+                    text: "Encrypted transmissions hinted covert operations globally. Agent Torres infiltrated abandoned facilities seeking classified intel. Shadows concealed threats. Split-second decisions meant survival. Protocol demanded extraction immediately, yet crucial evidence remained undiscovered within labyrinthine corridors ahead.",
+                    questions: [
+                        { q: "What kind of transmissions?", options: ["Radio", "Encrypted", "Digital", "Satellite"], answer: 1 },
+                        { q: "Who was the agent?", options: ["Smith", "Torres", "Chen", "Martinez"], answer: 1 },
+                        { q: "What did facilities contain?", options: ["Weapons", "Classified intel", "Supplies", "Documents"], answer: 1 },
+                        { q: "What remained undiscovered?", options: ["Evidence", "Weapons", "People", "Money"], answer: 0 },
+                        { q: "What did protocol demand?", options: ["Waiting", "Extraction", "Reporting", "Fighting"], answer: 1 }
+                    ]
+                }
+            ]
+        };
+
+        let currentDifficulty = 'easy';
+        let currentStoryIndex = 0;
+        let currentWordIndex = 0;
+        let isPaused = false;
+        let readingInterval;
+        let userAnswers = [];
+        let totalTests = 0;
+        let wpm = 300;
+
+        function getBionicWord(word) {
+            const len = word.length;
+            if (len === 1) {
+                return `<span class="highlight">${word}</span>`;
+            }
+            
+            const middleIndex = Math.floor(len / 2);
+            
+            const before = word.substring(0, middleIndex);
+            const middle = word.charAt(middleIndex);
+            const after = word.substring(middleIndex + 1);
+            
+            return `${before}<span class="highlight">${middle}</span>${after}`;
+        }
+
+        function startReading() {
+            document.getElementById('introSection').classList.add('hidden');
+            document.getElementById('readingSection').classList.remove('hidden');
+            
+            const story = stories[currentDifficulty][currentStoryIndex];
+            const words = story.text.split(' ');
+            currentWordIndex = 0;
+            isPaused = false;
+            
+            const delay = 60000 / wpm;
+            
+            readingInterval = setInterval(() => {
+                if (!isPaused && currentWordIndex < words.length) {
+                    const word = words[currentWordIndex];
+                    document.getElementById('wordDisplay').innerHTML = `<span class="word">${getBionicWord(word)}</span>`;
+                    currentWordIndex++;
+                } else if (currentWordIndex >= words.length) {
+                    clearInterval(readingInterval);
+                    showQuiz();
+                }
+            }, delay);
+        }
+
+        function togglePause() {
+            isPaused = !isPaused;
+            document.getElementById('pauseBtn').textContent = isPaused ? 'Resume' : 'Pause';
+        }
+
+        function stopReading() {
+            clearInterval(readingInterval);
+            currentWordIndex = 0;
+            showQuiz();
+        }
+
+        function showQuiz() {
+            document.getElementById('readingSection').classList.add('hidden');
+            document.getElementById('quizSection').style.display = 'block';
+            
+            const story = stories[currentDifficulty][currentStoryIndex];
+            const container = document.getElementById('questionsContainer');
+            container.innerHTML = '';
+            userAnswers = [];
+            
+            story.questions.forEach((q, qIndex) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.innerHTML = `
+                    <h3>Question ${qIndex + 1}: ${q.q}</h3>
+                    <div class="options">
+                        ${q.options.map((opt, oIndex) => `
+                            <div class="option" onclick="selectOption(${qIndex}, ${oIndex})">
+                                ${opt}
+                            </div>
+                        `).join('')}
+                        <div class="option idk" onclick="selectOption(${qIndex}, -1)">
+                            🤷 I don't know
+                        </div>
+                    </div>
+                `;
+                container.appendChild(questionDiv);
+            });
+        }
+
+        function selectOption(questionIndex, optionIndex) {
+            const questions = document.querySelectorAll('.question');
+            const options = questions[questionIndex].querySelectorAll('.option');
+            
+            options.forEach((opt, idx) => {
+                opt.classList.remove('selected');
+                if (idx === optionIndex) {
+                    opt.classList.add('selected');
+                }
+            });
+            
+            userAnswers[questionIndex] = optionIndex;
+        }
+
+        function submitQuiz() {
+            const story = stories[currentDifficulty][currentStoryIndex];
+            let correct = 0;
+            
+            story.questions.forEach((q, qIndex) => {
+                const questions = document.querySelectorAll('.question');
+                const options = questions[qIndex].querySelectorAll('.option');
+                
+                options.forEach((opt, oIndex) => {
+                    if (oIndex === q.answer) {
+                        opt.classList.add('correct');
+                    } else if (oIndex === userAnswers[qIndex] && oIndex !== q.answer) {
+                        opt.classList.add('incorrect');
+                    }
+                });
+                
+                if (userAnswers[qIndex] === q.answer) {
+                    correct++;
+                }
+            });
+            
+            setTimeout(() => {
+                showResults(correct, story.questions.length);
+            }, 2000);
+        }
+
+        function showResults(correct, total) {
+            document.getElementById('quizSection').style.display = 'none';
+            document.getElementById('resultsSection').classList.remove('hidden');
+            
+            const percentage = Math.round((correct / total) * 100);
+            document.getElementById('scoreDisplay').textContent = `${correct}/${total} (${percentage}%)`;
+            document.getElementById('accuracy').textContent = `${
