@@ -3,12 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#000000">
-    <meta name="description" content="Improve your reading speed with bionic reading and adaptive learning">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Speed Reader">
-    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIlNwZWVkIFJlYWRpbmcgVHJhaW5lciIsCiAgInNob3J0X25hbWUiOiAiU3BlZWQgUmVhZGVyIiwKICAic3RhcnRfdXJsIjogIi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMwMDAwMDAiLAogICJ0aGVtZV9jb2xvciI6ICIjMDAwMDAwIiwKICAib3JpZW50YXRpb24iOiAicG9ydHJhaXQiLAogICJpY29ucyI6IFsKICAgIHsKICAgICAgInNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBeE1qZ2dNVEk0SWo0OGNtVmpkQ0IzYVdSMGFEMGlNVEk0SWlCb1pXbG5hSFE5SWpFeU9DSWdabWxzYkQwaUl6QXdNREF3TUNJZ2NuZzlJakUySWk4K1BIUmxlSFFnZUQwaU5qUWlJSGs5SWpZMElpQm1iMjUwTFdaaGJXbHNlVDBpUVhKcFlXd2lJR1p2Ym5RdGMybDZaVDBpTkRnaUlHWnBiR3c5SWlObFp6YzBZek5qSWo0OEwzUmxlSFErUEhSbGVIUWdlRDBpTmpRaUlIazlJamN5SWlCbWIyNTBMV1poYldsc2VUMGlRWEpwWVd3aUlHWnZiblF0YzJsNlpUMGlNVGdpSUdacGJHdzlJaU5sT0RnNE9EZ2lQalF1TlR3dmRHVjRkRDQ4TDNOMlp6ND0iLAogICAgICAic2l6ZXMiOiAiMTI4eDEyOCIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiCiAgICB9LAogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIWnBaWGRDYjNnOUlqQWdNQ0F4TWpnZ01USTRJajQ4Y21WamRDQjNhV1IwYUQwaU1USTRJaUJvWldsbmFIUTlJakV5T0NJZ1ptbHNiRDBpSXpBd01EQXdNQ0lnY25nOUlqRTJJaTgrUEhSbGVIUWdlRDBpTmpRaUlIazlJalkwSWlCbWIyNTBMV1poYldsc2VUMGlRWEpwWVd3aUlHWnZiblF0YzJsNlpUMGlORGdpSUdacGJHdzlJaU5sWnpjMFl6TmpJajQ4TDNSbGVIUStQSFJsZUhRZ2VEMGlOalFpSUhrOUlqY3lJaUJtYjI1MExXWmhiV2xzZVQwaVFYSnBZV3dpSUdadmJuUXRjMmw2WlQwaU1UZ2lJR1pwYkd3OUlpTmxPRGc0T0RnaVBqUXVOVHd2ZEdWNGRENDhMM04yWno0PSIsCiAgICAgICJzaXplcyI6ICIxMjh4MTI4IiwKICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIsCiAgICAgICJwdXJwb3NlIjogImFueSBtYXNrYWJsZSIKICAgIH0KICBDCN0">
     <title>Speed Reading Trainer</title>
     <style>
         * {
@@ -48,25 +42,6 @@
             color: #888;
             margin-bottom: 30px;
             font-size: 14px;
-        }
-
-        .install-prompt {
-            background: #2a2a2a;
-            border: 2px solid #e74c3c;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
-            text-align: center;
-            display: none;
-        }
-
-        .install-prompt.show {
-            display: block;
-        }
-
-        .install-prompt p {
-            color: #ccc;
-            margin-bottom: 10px;
         }
 
         .reading-display {
@@ -297,37 +272,12 @@
         .hidden {
             display: none;
         }
-
-        .offline-indicator {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background: #e74c3c;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            display: none;
-        }
-
-        .offline-indicator.show {
-            display: block;
-        }
     </style>
 </head>
 <body>
-    <div class="offline-indicator" id="offlineIndicator">📴 Offline Mode</div>
-    
     <div class="container">
-        <h1>⚡ Speed Reading Trainer</h1>
-        <p class="subtitle">Bionic Reading • Adaptive Learning</p>
-
-        <div class="install-prompt" id="installPrompt">
-            <p>📱 Install this app for offline access and a better experience!</p>
-            <button class="btn-primary btn-small" id="installButton">Install App</button>
-            <button class="btn-secondary btn-small" onclick="dismissInstallPrompt()">Maybe Later</button>
-        </div>
+        <h1>âš¡ Speed Reading Trainer</h1>
+        <p class="subtitle">Bionic Reading â€¢ Adaptive Learning</p>
 
         <div class="stats">
             <div class="stat">
@@ -373,8 +323,8 @@
             
             <p style="color: #888; font-size: 14px; margin-bottom: 10px;">How did that feel?</p>
             <div class="feedback-buttons">
-                <button class="btn-danger btn-small" onclick="manualAdjust('too-hard')">😰 Too Hard</button>
-                <button class="btn-success btn-small" onclick="manualAdjust('too-easy')">😴 Too Easy</button>
+                <button class="btn-danger btn-small" onclick="manualAdjust('too-hard')">ðŸ˜° Too Hard</button>
+                <button class="btn-success btn-small" onclick="manualAdjust('too-easy')">ðŸ˜´ Too Easy</button>
             </div>
             
             <div class="controls">
@@ -384,98 +334,6 @@
     </div>
 
     <script>
-        // PWA Installation
-        let deferredPrompt;
-        const installPrompt = document.getElementById('installPrompt');
-        const installButton = document.getElementById('installButton');
-        const offlineIndicator = document.getElementById('offlineIndicator');
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            installPrompt.classList.add('show');
-        });
-
-        installButton.addEventListener('click', async () => {
-            if (!deferredPrompt) return;
-            
-            deferredPrompt.prompt();
-            const { outcome } = await deferredPrompt.userChoice;
-            
-            if (outcome === 'accepted') {
-                installPrompt.classList.remove('show');
-            }
-            
-            deferredPrompt = null;
-        });
-
-        function dismissInstallPrompt() {
-            installPrompt.classList.remove('show');
-        }
-
-        // Service Worker Registration
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                const swCode = `
-                    const CACHE_NAME = 'speed-reader-v1';
-                    
-                    self.addEventListener('install', (event) => {
-                        event.waitUntil(
-                            caches.open(CACHE_NAME).then((cache) => {
-                                return cache.addAll(['/']);
-                            })
-                        );
-                        self.skipWaiting();
-                    });
-                    
-                    self.addEventListener('fetch', (event) => {
-                        event.respondWith(
-                            caches.match(event.request).then((response) => {
-                                return response || fetch(event.request);
-                            })
-                        );
-                    });
-                    
-                    self.addEventListener('activate', (event) => {
-                        event.waitUntil(
-                            caches.keys().then((cacheNames) => {
-                                return Promise.all(
-                                    cacheNames.map((cacheName) => {
-                                        if (cacheName !== CACHE_NAME) {
-                                            return caches.delete(cacheName);
-                                        }
-                                    })
-                                );
-                            })
-                        );
-                    });
-                `;
-                
-                const blob = new Blob([swCode], { type: 'application/javascript' });
-                const swUrl = URL.createObjectURL(blob);
-                
-                navigator.serviceWorker.register(swUrl).then(() => {
-                    console.log('Service Worker registered');
-                }).catch((error) => {
-                    console.log('Service Worker registration failed:', error);
-                });
-            });
-        }
-
-        // Online/Offline Detection
-        window.addEventListener('online', () => {
-            offlineIndicator.classList.remove('show');
-        });
-
-        window.addEventListener('offline', () => {
-            offlineIndicator.classList.add('show');
-        });
-
-        // Check initial state
-        if (!navigator.onLine) {
-            offlineIndicator.classList.add('show');
-        }
-
         const stories = {
             easy: [
                 {
@@ -560,6 +418,7 @@
                 return `<span class="highlight">${word}</span>`;
             }
             
+            // Highlight only ONE middle letter
             const middleIndex = Math.floor(len / 2);
             
             const before = word.substring(0, middleIndex);
@@ -624,7 +483,7 @@
                             </div>
                         `).join('')}
                         <div class="option idk" onclick="selectOption(${qIndex}, -1)">
-                            🤷 I don't know
+                            ðŸ¤· I don't know
                         </div>
                     </div>
                 `;
@@ -678,4 +537,127 @@
             
             const percentage = Math.round((correct / total) * 100);
             document.getElementById('scoreDisplay').textContent = `${correct}/${total} (${percentage}%)`;
-            document.getElementById('accuracy').textContent = `${
+            document.getElementById('accuracy').textContent = `${percentage}%`;
+            
+            totalTests++;
+            let difficultyChange = '';
+            let feedback = '';
+            
+            // More nuanced difficulty adjustment based on score
+            if (correct === 5) {
+                // 100% - Way too easy!
+                feedback = "Perfect score! ðŸ† This is too easy for you. Let's challenge you more!";
+                if (currentDifficulty === 'easy') {
+                    currentDifficulty = 'hard';  // Skip medium entirely
+                    wpm = 500;
+                    difficultyChange = '<div class="difficulty-badge difficulty-hard">â¬†ï¸â¬†ï¸ JUMPED to Hard!</div>';
+                } else if (currentDifficulty === 'medium') {
+                    currentDifficulty = 'hard';
+                    wpm = 550;  // Extra speed boost
+                    difficultyChange = '<div class="difficulty-badge difficulty-hard">â¬†ï¸â¬†ï¸ Hard + Speed Boost!</div>';
+                } else {
+                    wpm += 100;  // Big speed increase
+                    difficultyChange = '<div class="difficulty-badge difficulty-hard">â¬†ï¸â¬†ï¸ Major Speed Boost!</div>';
+                }
+            } else if (correct === 4) {
+                // 80% - Too easy
+                feedback = "Excellent! ðŸŽ‰ You're ready for more challenge!";
+                if (currentDifficulty === 'easy') {
+                    currentDifficulty = 'medium';
+                    wpm = 400;
+                    difficultyChange = '<div class="difficulty-badge difficulty-medium">â¬†ï¸ Level Up: Medium</div>';
+                } else if (currentDifficulty === 'medium') {
+                    currentDifficulty = 'hard';
+                    wpm = 500;
+                    difficultyChange = '<div class="difficulty-badge difficulty-hard">â¬†ï¸ Level Up: Hard</div>';
+                } else {
+                    wpm += 50;
+                    difficultyChange = '<div class="difficulty-badge difficulty-hard">â¬†ï¸ Speed Increased!</div>';
+                }
+            } else if (correct === 3) {
+                // 60% - Just right, gentle increase
+                feedback = "Good job! ðŸ‘ You're progressing well!";
+                wpm += 25;
+                difficultyChange = '<div class="difficulty-badge difficulty-' + currentDifficulty + '">âœ… Slight Speed Increase</div>';
+            } else if (correct === 2) {
+                // 40% - Too hard
+                feedback = "Hmm, that was tough. ðŸ’ª Let's make it easier.";
+                if (currentDifficulty === 'hard') {
+                    currentDifficulty = 'medium';
+                    wpm = 400;
+                    difficultyChange = '<div class="difficulty-badge difficulty-medium">â¬‡ï¸ Level Down: Medium</div>';
+                } else if (currentDifficulty === 'medium') {
+                    currentDifficulty = 'easy';
+                    wpm = 300;
+                    difficultyChange = '<div class="difficulty-badge difficulty-easy">â¬‡ï¸ Level Down: Easy</div>';
+                } else {
+                    wpm = Math.max(200, wpm - 50);
+                    difficultyChange = '<div class="difficulty-badge difficulty-easy">â¬‡ï¸ Speed Decreased</div>';
+                }
+            } else {
+                // 0-20% - Way too hard!
+                feedback = "That was really tough! ðŸ˜… Let's slow way down and simplify.";
+                if (currentDifficulty === 'hard') {
+                    currentDifficulty = 'easy';  // Drop to easy directly
+                    wpm = 250;
+                    difficultyChange = '<div class="difficulty-badge difficulty-easy">â¬‡ï¸â¬‡ï¸ DROPPED to Easy!</div>';
+                } else if (currentDifficulty === 'medium') {
+                    currentDifficulty = 'easy';
+                    wpm = 250;
+                    difficultyChange = '<div class="difficulty-badge difficulty-easy">â¬‡ï¸â¬‡ï¸ Easy + Slower Speed</div>';
+                } else {
+                    wpm = Math.max(150, wpm - 100);  // Big speed decrease
+                    difficultyChange = '<div class="difficulty-badge difficulty-easy">â¬‡ï¸â¬‡ï¸ Much Slower!</div>';
+                }
+            }
+            
+            document.getElementById('difficultyChange').innerHTML = difficultyChange;
+            document.getElementById('feedbackText').textContent = feedback;
+            document.getElementById('wpm').textContent = wpm;
+            document.getElementById('currentLevel').textContent = totalTests + 1;
+        }
+
+        function manualAdjust(adjustment) {
+            let message = '';
+            
+            if (adjustment === 'too-hard') {
+                message = 'Got it! Making it easier for you. ðŸ‘';
+                if (currentDifficulty === 'hard') {
+                    currentDifficulty = 'medium';
+                    wpm = 350;
+                } else if (currentDifficulty === 'medium') {
+                    currentDifficulty = 'easy';
+                    wpm = 250;
+                } else {
+                    wpm = Math.max(150, wpm - 75);
+                }
+            } else if (adjustment === 'too-easy') {
+                message = 'Awesome! Ramping up the challenge! ðŸš€';
+                if (currentDifficulty === 'easy') {
+                    currentDifficulty = 'medium';
+                    wpm = 450;
+                } else if (currentDifficulty === 'medium') {
+                    currentDifficulty = 'hard';
+                    wpm = 550;
+                } else {
+                    wpm += 75;
+                }
+            }
+            
+            document.getElementById('feedbackText').textContent = message;
+            document.getElementById('wpm').textContent = wpm;
+            
+            // Update the difficulty badge
+            const badge = `<div class="difficulty-badge difficulty-${currentDifficulty}">Manually adjusted to ${currentDifficulty.charAt(0).toUpperCase() + currentDifficulty.slice(1)}</div>`;
+            document.getElementById('difficultyChange').innerHTML = badge;
+        }
+
+        function nextStory() {
+            currentStoryIndex = (currentStoryIndex + 1) % stories[currentDifficulty].length;
+            document.getElementById('resultsSection').classList.add('hidden');
+            document.getElementById('readingSection').classList.remove('hidden');
+            startReading();
+        }
+    </script>
+</body>
+</html>
